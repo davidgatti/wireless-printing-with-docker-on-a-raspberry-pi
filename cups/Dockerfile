@@ -18,9 +18,9 @@ RUN apt-get update && \
     apt-get -y autoremove
 
 #
-#	Comment out "Listen localhost:631" to allow remote connections
+#	Copy the config file
 #
-RUN sed -i '/![^#]/ s/\(^.*Listen localhost:631.*$\)/#\ \1/' /etc/cups/cupsd.conf
+COPY cupsd.conf /etc/cups/cupsd.conf
 
 #
 #	Create app directory

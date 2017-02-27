@@ -4,7 +4,7 @@ Convert any printer in to a wireless one.
 
 # Docker build
 
-git pull & \
+git pull && \
 docker stop cups || \
 docker rm cups || \
 docker build -t cups . && \
