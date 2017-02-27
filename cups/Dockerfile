@@ -37,7 +37,7 @@ COPY start.sh /home/cups
 #
 WORKDIR /home/cups
 
-RUN chmod +x start_cups.sh
+RUN chmod +x start.sh
 
 EXPOSE 631
 
