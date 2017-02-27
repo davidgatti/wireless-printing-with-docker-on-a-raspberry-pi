@@ -39,11 +39,12 @@ WORKDIR /home/cups
 
 RUN chmod +x start.sh
 
-RUN service cups start
-
+#
+#
+#
 EXPOSE 631
 
 #
 #	Run the app
 #
-CMD ["tail -F -n0 /etc/hosts"]
+CMD service cups start && tail -f /var/log/faillog
