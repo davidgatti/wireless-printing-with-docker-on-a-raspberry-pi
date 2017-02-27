@@ -30,7 +30,7 @@ RUN mkdir -p /home/cups
 #
 #	Copy the content of the app
 #
-COPY start_cups.sh /home/cups
+COPY start.sh /home/cups
 
 #
 #	Switch working directory
