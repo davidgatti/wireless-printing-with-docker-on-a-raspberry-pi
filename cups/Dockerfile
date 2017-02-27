@@ -44,4 +44,4 @@ EXPOSE 631
 #
 #	Run the app
 #
-CMD ["top"]
+CMD ["service cups start"]
