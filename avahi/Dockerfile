@@ -20,7 +20,7 @@ RUN apt-get update && \
 #
 #	Expose the default port
 #
-EXPOSE 5353 UDP
+EXPOSE 5353
 
 #
 #	Run the app
