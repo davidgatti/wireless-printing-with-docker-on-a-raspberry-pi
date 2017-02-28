@@ -18,7 +18,7 @@ RUN apt-get update && \
     apt-get -y autoremove
 
 #
-#
+#	Add a Printer user
 #
 RUN useradd \
   	--groups=sudo,lp,lpadmin \
@@ -28,32 +28,22 @@ RUN useradd \
   	print
 
 #
-#
+#	Set the password for the printer user
 #
 RUN echo print:sdsds | chpasswd
 
 #
-#	Copy the config file
+#	Replace the default config file
 #
 COPY cupsd.conf /etc/cups/cupsd.conf
 
 #
-#	Copy the content of the app
-#
-COPY start.sh /home/print
-
-#
-#	Switch working directory
+#	Switch the working directory
 #
 WORKDIR /home/print
 
 #
-#
-#
-RUN chmod +x start.sh
-
-#
-#
+#	Expose the default port
 #
 EXPOSE 631
 
