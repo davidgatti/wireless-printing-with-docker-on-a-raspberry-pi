@@ -14,8 +14,15 @@ MAINTAINER David Gatti "docker@gatti.pl"
 RUN apt-get update && \
     apt-get upgrade && \
     apt-get install avahi-daemon && \
-    apt-get clean && \
-    apt-get -y autoremove
+    apt-get -y autoclean && \
+    apt-get -y autoremove && \
+    apt-get -y clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+#
+#
+#
+COPY avahi-daemon.conf /etc/avahi/avahi-daemon.conf
 
 #
 #	Expose the default port
@@ -25,4 +32,4 @@ EXPOSE 5353
 #
 #	Run the app
 #
-CMD service avahi start && tail -f /var/log/faillog
+CMD avahi-daemon --no-drop-root && tail -f /var/log/faillog
