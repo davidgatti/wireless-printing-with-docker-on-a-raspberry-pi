@@ -30,7 +30,7 @@ RUN useradd \
 #
 #
 #
-RUN passwd print $(echo aPassword)
+RUN echo print:sdsds | chpasswd
 
 #
 #	Copy the config file
