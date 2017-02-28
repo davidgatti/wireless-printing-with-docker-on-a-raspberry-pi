@@ -5,9 +5,11 @@ Convert any printer in to a wireless one.
 # Docker build
 
 git pull && \
-docker stop cups && \
-docker rm cups && \
-docker rmi cups && \
+docker tag cups cups:old
 docker build -t cups . && \
+docker kill cups && \
+docker rm cups && \
+docker rmi cups:old && \
 echo -e "\a" && \
-docker run -d -e CUPS_USER_ADMIN=admin -e CUPS_USER_PASSWORD=secr3t --name cups -p 631:631 cups
+docker run -d --name cups -p 631:631 cups
+

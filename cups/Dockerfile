@@ -30,7 +30,7 @@ RUN useradd \
 #
 #
 #
-RUN echo thePassword | passwd print --stdin
+RUN passwd print $(echo aPassword)
 
 #
 #	Copy the config file
@@ -47,8 +47,14 @@ COPY start.sh /home/print
 #
 WORKDIR /home/print
 
+#
+#
+#
 RUN chmod +x start.sh
 
+#
+#
+#
 EXPOSE 631
 
 #
