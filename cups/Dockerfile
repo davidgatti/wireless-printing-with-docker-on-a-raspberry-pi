@@ -18,30 +18,37 @@ RUN apt-get update && \
     apt-get -y autoremove
 
 #
+#
+#
+RUN useradd \
+  	--groups=sudo,lp,lpadmin \
+  	--create-home \
+  	--home-dir=/home/print \
+  	--shell=/bin/bash \
+  	print
+
+#
+#
+#
+RUN echo thePassword | passwd print --stdin
+
+#
 #	Copy the config file
 #
 COPY cupsd.conf /etc/cups/cupsd.conf
 
 #
-#	Create app directory
-#
-RUN mkdir -p /home/cups
-
-#
 #	Copy the content of the app
 #
-COPY start.sh /home/cups
+COPY start.sh /home/print
 
 #
 #	Switch working directory
 #
-WORKDIR /home/cups
+WORKDIR /home/print
 
 RUN chmod +x start.sh
 
-#
-#
-#
 EXPOSE 631
 
 #

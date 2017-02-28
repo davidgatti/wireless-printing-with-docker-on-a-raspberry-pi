@@ -1,4 +1,4 @@
-# wireless-printing-with-docker-on-a-raspberry-pi
+# Wireless Printing With Docker On A Raspberry-PI
 
 Convert any printer in to a wireless one.
 
