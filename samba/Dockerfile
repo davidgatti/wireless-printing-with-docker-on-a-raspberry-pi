@@ -20,7 +20,7 @@ RUN apt-get update && \
 #
 #	Replace the default config file
 #
-#COPY cupsd.conf /etc/cups/cupsd.conf
+COPY smb.conf /etc/samba/smb.conf
 
 #
 #	Expose the default port
