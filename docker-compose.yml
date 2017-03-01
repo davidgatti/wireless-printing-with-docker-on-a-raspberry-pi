@@ -1,0 +1,37 @@
+version: '2'
+
+services:
+
+  cups:
+    build: ../cups
+    ports:
+     - "631:631"
+    volumes:
+     - ../../curted.com:/code
+    networks:
+     - print
+    working_dir: /code
+    environment:
+     NODE_ENV: local
+    volumes:
+     - printers:/usr/share/cups/drivers
+
+  samba:
+    build: ../samba
+    ports:
+     - "139:139"
+     - "445:445"
+    volumes:
+     - printers:/home/drivers
+    networks:
+     - print
+    working_dir: /code
+    environment:
+     NODE_ENV: local
+
+networks:
+  print:
+    driver: bridge
+
+volumes:
+  printers:
