@@ -23,6 +23,11 @@ RUN apt-get update && \
 COPY smb.conf /etc/samba/smb.conf
 
 #
+#
+#
+RUN mkdir -p /home/drivers
+
+#
 #	Expose the default port
 #
 EXPOSE 139
