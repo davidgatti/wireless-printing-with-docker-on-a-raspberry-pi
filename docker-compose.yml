@@ -3,7 +3,7 @@ version: '2'
 services:
 
   cups:
-    build: ../cups
+    build: cups
     ports:
      - "631:631"
     volumes:
@@ -17,7 +17,7 @@ services:
      - printers:/usr/share/cups/drivers
 
   samba:
-    build: ../samba
+    build: samba
     ports:
      - "139:139"
      - "445:445"
