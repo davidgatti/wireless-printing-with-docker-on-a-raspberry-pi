@@ -15,7 +15,8 @@ RUN apt-get update && \
     apt-get upgrade && \
     apt-get install samba && \
     apt-get clean && \
-    apt-get -y autoremove
+    apt-get -y autoremove && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #
 #	Replace the default config file
