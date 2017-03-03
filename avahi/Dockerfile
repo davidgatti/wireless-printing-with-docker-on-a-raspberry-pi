@@ -13,6 +13,7 @@ MAINTAINER David Gatti "docker@gatti.pl"
 #
 RUN apt-get update && \
     apt-get upgrade && \
+    apt-get install libnss-mdns && \
     apt-get install avahi-daemon && \
     apt-get -y autoclean && \
     apt-get -y autoremove && \
