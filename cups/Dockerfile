@@ -15,7 +15,8 @@ RUN apt-get update && \
     apt-get upgrade && \
     apt-get install cups && \
     apt-get clean && \
-    apt-get -y autoremove
+    apt-get -y autoremove && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #
 #	Add a Printer user
@@ -50,4 +51,4 @@ EXPOSE 631
 #
 #	Run the app
 #
-CMD service cups start && tail -f /var/log/faillog
+CMD service cups start && tail -f /var/log/cups

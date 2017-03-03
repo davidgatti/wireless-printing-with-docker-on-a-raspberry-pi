@@ -6,11 +6,8 @@ services:
     build: cups
     ports:
      - "631:631"
-    volumes:
-     - ../../curted.com:/code
     networks:
      - print
-    working_dir: /code
     environment:
      NODE_ENV: local
     volumes:
@@ -25,9 +22,15 @@ services:
      - printers:/home/drivers
     networks:
      - print
-    working_dir: /code
     environment:
      NODE_ENV: local
+
+  avahi:
+    build: avahi
+    ports:
+     - "5353:5353"
+    networks:
+     - print
 
 networks:
   print:
