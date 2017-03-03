@@ -12,6 +12,7 @@ services:
      NODE_ENV: local
     volumes:
      - printers:/usr/share/cups/drivers
+     - /dev/bus/usb:/dev/bus/usb
 
   samba:
     build: samba
