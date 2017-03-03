@@ -44,6 +44,11 @@ COPY cupsd.conf /etc/cups/cupsd.conf
 WORKDIR /home/print
 
 #
+# Mount local USB inside Container
+#
+VOLUME /dev/bus/usb:/dev/bus/usb
+
+#
 #	Expose the default port
 #
 EXPOSE 631
