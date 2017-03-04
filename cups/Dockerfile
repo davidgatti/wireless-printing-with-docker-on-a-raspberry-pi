@@ -13,6 +13,7 @@ MAINTAINER David Gatti "docker@gatti.pl"
 #
 RUN apt-get update && \
     apt-get upgrade && \
+    apt-get install apt-utils && \
     apt-get install cups && \
     apt-get install hplip && \
     apt-get install hpijs-ppds && \
@@ -31,12 +32,8 @@ RUN useradd \
   	--create-home \
   	--home-dir=/home/print \
   	--shell=/bin/bash \
-  	print
-
-#
-#	Set the password for the printer user
-#
-RUN echo print:sdsds | chpasswd
+  	print && \
+    echo print:sdsds | chpasswd
 
 #
 #	Replace the default config file
@@ -56,4 +53,4 @@ EXPOSE 631
 #
 #	Run the app
 #
-CMD service cups start && tail -f /var/log/faillog
+CMD service cups start && tail -f /var/log/messages

@@ -34,4 +34,4 @@ EXPOSE 5353
 #
 #	Run the app
 #
-CMD avahi-daemon --no-drop-root && tail -f /var/log/faillog
+CMD avahi-daemon --no-drop-root && tail -f /var/log/messages

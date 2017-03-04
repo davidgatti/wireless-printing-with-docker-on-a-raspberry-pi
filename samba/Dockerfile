@@ -40,4 +40,4 @@ EXPOSE 138
 #
 #	Run the app
 #
-CMD service samba start && tail -f /var/log/faillog
+CMD service samba start && tail -f /var/log/messages
