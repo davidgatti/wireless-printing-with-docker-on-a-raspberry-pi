@@ -53,4 +53,4 @@ EXPOSE 631
 #
 #	Run the app
 #
-CMD service cups start && tail -f /var/log/messages
+CMD service cups start && tail -f /var/log/lastlog
