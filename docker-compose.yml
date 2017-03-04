@@ -19,6 +19,8 @@ services:
     ports:
      - "139:139"
      - "445:445"
+     - "137:137/udp"
+     - "138:138/udp"
     volumes:
      - printers:/home/drivers
     networks:

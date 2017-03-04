@@ -14,6 +14,12 @@ MAINTAINER David Gatti "docker@gatti.pl"
 RUN apt-get update && \
     apt-get upgrade && \
     apt-get install cups && \
+    apt-get install usbutilslp && \
+    apt-get install hplip && \
+    apt-get install hpijs-ppds && \
+    apt-get install hp-ppd && \
+    apt-get install printer-driver-all && \
+    apt-get install openprinting-ppds && \
     apt-get clean && \
     apt-get -y autoremove && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -42,11 +48,6 @@ COPY cupsd.conf /etc/cups/cupsd.conf
 #	Switch the working directory
 #
 WORKDIR /home/print
-
-#
-# Mount local USB inside Container
-#
-VOLUME /dev/bus/usb:/dev/bus/usb
 
 #
 #	Expose the default port

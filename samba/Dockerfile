@@ -33,6 +33,8 @@ RUN mkdir -p /home/drivers
 #
 EXPOSE 139
 EXPOSE 445
+EXPOSE 137
+EXPOSE 138
 
 #
 #	Run the app
