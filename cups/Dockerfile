@@ -14,7 +14,6 @@ MAINTAINER David Gatti "docker@gatti.pl"
 RUN apt-get update && \
     apt-get upgrade && \
     apt-get install cups && \
-    apt-get install usbutilslp && \
     apt-get install hplip && \
     apt-get install hpijs-ppds && \
     apt-get install hp-ppd && \
