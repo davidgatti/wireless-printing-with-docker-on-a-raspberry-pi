@@ -13,6 +13,7 @@ MAINTAINER David Gatti "docker@gatti.pl"
 #
 RUN apt-get update && \
     apt-get upgrade && \
+    apt-get install apt-utils && \
     apt-get install samba && \
     apt-get clean && \
     apt-get -y autoremove && \
