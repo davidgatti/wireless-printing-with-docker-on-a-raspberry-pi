@@ -25,15 +25,13 @@ services:
      - printers:/home/drivers
     networks:
      - print
-    environment:
-     NODE_ENV: local
 
-  # avahi:
-  #   build: avahi
-  #   ports:
-  #    - "5353:5353"
-  #   networks:
-  #    - print
+  avahi:
+    build: avahi
+    ports:
+     - "5353:5353"
+    networks:
+     - print
 
 networks:
   print:

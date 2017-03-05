@@ -25,6 +25,7 @@ RUN apt-get update && \
 #
 #
 COPY avahi-daemon.conf /etc/avahi/avahi-daemon.conf
+COPY smb.service /etc/avahi/services/smb.service
 
 #
 #	Expose the default port
