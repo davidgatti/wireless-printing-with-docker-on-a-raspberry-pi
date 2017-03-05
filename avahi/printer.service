@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone='no'?><!--*-nxml-*-->
+<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+<service-group>
+  <name replace-wildcards="yes">Printer on %h</name>
+  <service>
+    <type>_ipp._tcp</type>
+    <subtype>_colour._sub._ipp._tcp</subtype>
+    <port>631</port>
+  </service>
+</service-group>
