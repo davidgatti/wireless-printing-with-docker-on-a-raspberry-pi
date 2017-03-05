@@ -29,7 +29,8 @@ services:
   avahi:
     build: avahi
     ports:
-     - "5353:5353"
+     - "5353:5353/udp"
+     - "53791:53791/udp"
     networks:
      - print
 

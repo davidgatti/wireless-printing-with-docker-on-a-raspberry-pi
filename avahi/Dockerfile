@@ -30,7 +30,8 @@ COPY smb.service /etc/avahi/services/smb.service
 #
 #	Expose the default port
 #
-EXPOSE 5353
+EXPOSE 5353/udp
+EXPOSE 53791/upd
 
 #
 #	Run the app
