@@ -33,8 +33,8 @@ RUN mkdir -p /home/drivers
 #	Expose the default port
 #
 EXPOSE 445
-EXPOSE 137
-EXPOSE 138
+EXPOSE 137/udp
+EXPOSE 138/udp
 EXPOSE 139
 
 #

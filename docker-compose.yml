@@ -9,7 +9,7 @@ services:
     networks:
      - print
     environment:
-     NODE_ENV: local
+     CUPS_USER: print
     volumes:
      - printers:/usr/share/cups/drivers
      - /dev/bus/usb:/dev/bus/usb
