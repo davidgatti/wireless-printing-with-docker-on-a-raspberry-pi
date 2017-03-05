@@ -53,4 +53,4 @@ EXPOSE 631
 #
 #	Run the app
 #
-CMD sudo print service cups start && tail -f /var/log/lastlog
+CMD sudo -u print service cups start && tail -f /var/log/lastlog
