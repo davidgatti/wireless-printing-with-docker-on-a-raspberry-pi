@@ -32,10 +32,10 @@ RUN mkdir -p /home/drivers
 #
 #	Expose the default port
 #
-EXPOSE 139
 EXPOSE 445
 EXPOSE 137
 EXPOSE 138
+EXPOSE 139
 
 #
 #	Run the app
