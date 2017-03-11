@@ -28,6 +28,7 @@ COPY smb.conf /etc/samba/smb.conf
 #
 #
 RUN mkdir -p /home/drivers
+RUN mkdir -p /var/spool/samba && chmod 1777 /var/spool/samba/
 
 #
 #	Samba Port
