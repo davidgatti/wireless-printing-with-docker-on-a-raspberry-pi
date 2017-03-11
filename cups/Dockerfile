@@ -46,6 +46,11 @@ COPY cupsd.conf /etc/cups/cupsd.conf
 WORKDIR /home/print
 
 #
+# Share the same dbus among all containers
+#
+RUN mkdir -p /var/run/dbus
+
+#
 #	Expose the default port
 #
 EXPOSE 631

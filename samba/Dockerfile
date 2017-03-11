@@ -31,6 +31,11 @@ RUN mkdir -p /home/drivers
 RUN mkdir -p /var/spool/samba && chmod 1777 /var/spool/samba/
 
 #
+#	Share the same dbus among all containers
+#
+RUN mkdir -p /var/run/dbus
+
+#
 #	Samba Port
 #
 EXPOSE 445

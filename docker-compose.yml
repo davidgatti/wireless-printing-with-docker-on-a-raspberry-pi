@@ -13,6 +13,8 @@ services:
     volumes:
      - printers:/usr/share/cups/drivers
      - /dev/bus/usb:/dev/bus/usb
+     - /var/run/dbus:/var/run/dbus
+
 
   samba:
     build: samba
@@ -24,6 +26,7 @@ services:
      - "139:139"
     volumes:
      - printers:/home/drivers
+     - /var/run/dbus:/var/run/dbus
     networks:
      - print
 
@@ -34,6 +37,8 @@ services:
      - "53791:53791/udp"
     networks:
      - print
+    volumes:
+     - /var/run/dbus:/var/run/dbus
 
 networks:
   print:

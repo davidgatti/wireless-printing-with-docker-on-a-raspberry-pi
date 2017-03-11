@@ -26,8 +26,16 @@ RUN apt-get update && \
 #
 COPY avahi-daemon.conf /etc/avahi/avahi-daemon.conf
 
+#
+#	Services
+#
 COPY smb.service /etc/avahi/services/smb.service
 COPY printer.service /etc/avahi/services/printer.service
+
+#
+#	Share the same dbus among all containers
+#
+RUN mkdir -p /var/run/dbus
 
 #
 #	Expose the default port
