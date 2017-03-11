@@ -50,4 +50,4 @@ EXPOSE 139
 #
 #	Run the app
 #
-CMD service smbd start && service nmbd start && tail -f /var/log/lastlog
+CMD service smbd start && service nmbd start && tail -f /var/log/samba/log.nmbd /var/log/samba/log.smbd
