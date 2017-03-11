@@ -30,9 +30,13 @@ COPY smb.conf /etc/samba/smb.conf
 RUN mkdir -p /home/drivers
 
 #
-#	Expose the default port
+#	Samba Port
 #
 EXPOSE 445
+
+#
+#	NetBIOS ports
+#
 EXPOSE 137/udp
 EXPOSE 138/udp
 EXPOSE 139
@@ -40,4 +44,4 @@ EXPOSE 139
 #
 #	Run the app
 #
-CMD service samba start && tail -f /var/log/lastlog
+CMD service smbd start && service nmbd start && tail -f /var/log/lastlog
